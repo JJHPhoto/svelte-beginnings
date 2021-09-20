@@ -2,10 +2,14 @@
 	export let name;
 </script>
 
-<style>
-	h1 {
-		color: purple;
-	}
-</style>
 
-<h1>Hello {name}!</h1>
+<main>
+
+  <h1>Hello {name}!</h1>
+</main>
+
+<style>
+    h1 {
+      color: purple;
+    }
+</style>
