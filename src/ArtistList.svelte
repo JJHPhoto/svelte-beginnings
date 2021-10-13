@@ -1,11 +1,32 @@
 <script>
-  let name = "Tibetan Monk";
-  let src = "https://i1.wp.com/www.joshuajhaller.com/wp-content/uploads/2019/09/Portraits_Tibet_35.jpg";
-  let reknown = "Yarchen Gar";
+  export let artists;
 </script>
 
+<style>
+  img {
+   height: 80px; 
+  }
 
-  <img src={src} alt="{`Photo of ${name}`}" />
-  <h2 class="artist-name mb-0 text-primary">{name}</h2>
-  <p class="artist-reknown text-muted mb-0">{reknown}</p>
+  h4 {
+    font-size: 1rem;
+  }
 
+  p {
+    font-size: 0.8em;
+  }
+</style>
+
+{#each artists as {name, src, reknown}} 
+<div
+class="list-group-item d-flex w-100 list-group-item-action
+align-items-center">
+<img
+  class="rounded mr-3 d-block"
+  src={src}
+  alt={`Photo of ${name}`} />
+<div>
+  <h4 class="mb-0">{name}</h4>
+  <p class="text-muted mb-0">{reknown}</p>
+</div>
+</div>
+{/each}
