@@ -2,7 +2,7 @@
   import {onMount} from "svelte";
   import ArtistList from "./ArtistList.svelte";
   import ArtistSearch from "./ArtistSearch.svelte";
-  let searchTerm = "Artists";
+  let searchTerm = "";
   let artists = [];
 
   onMount(
