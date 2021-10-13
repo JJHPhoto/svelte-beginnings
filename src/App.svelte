@@ -1,20 +1,17 @@
 <script>
+  import {onMount} from "svelte";
   import ArtistList from "./ArtistList.svelte";
   import ArtistSearch from "./ArtistSearch.svelte";
-  let searchTerm = "Tibetan Monk";
-  let artists = [
-    {
-      name: "Barot Bellingham",
-      src: "https://lil-cdn.com/2824055/Barot_Bellingham_tn.jpg",
-      reknown: "Royal Academy of Painting and Sculpture"
-    },
-    {
-      name: "Jonathan G. Ferrar II",
-      src: "https://lil-cdn.com/2824055/Jonathan_Ferrar_tn.jpg",
-      reknown: "Artist to Watch in 2012"
-    }
-];
+  let searchTerm = "Artists";
+  let artists = [];
 
+  onMount(
+    async() => {
+      const res = await fetch(`data.json`);
+
+      artists = await res.json();
+    }
+  )
 </script>
 
 
